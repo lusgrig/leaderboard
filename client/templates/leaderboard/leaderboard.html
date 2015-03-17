@@ -1,0 +1,28 @@
+<template name="leaderboard">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+              <th>Options</th>
+            </tr>
+            {{#each player}}
+              <tr class="player {{selectedClass}}">
+                <td>{{name}}</td>
+                <td>{{score}}</td>
+                <td><a href="#" class="glyphicon glyphicon-trash remove"></a></td>
+              </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#if showSelectedPlayer}}
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      Selected Player : {{showSelectedPlayer.name}}
+    </div>
+    {{/if}}
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+       <input type="button" class="increment" value="Give Points!">
+        <input type="button" class="decrement" value="You suck!">
+    </div>
+   
+</template>

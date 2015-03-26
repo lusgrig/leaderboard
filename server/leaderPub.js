@@ -13,7 +13,11 @@ if (Meteor.isServer) {
         createdBy: currentUserId
       });
       // console.log(currentUserId);
-    }, 
+    },
+
+    // 'updateName': function(playerNameVar) {
+    //   PlayerList.update()
+    // }
 
     'removePlayerData': function(selectedPlayer) {
       console.log("remove");

@@ -17,6 +17,10 @@ if (Meteor.isClient) {
      'showSelectedPlayer': function(){
       var selectedPlayer = Session.get('selectedPlayer');
       return PlayerList.findOne(selectedPlayer);
+     },
+
+     'editTable': function(){
+      return Session.get('editTable');
      }
   });
 
@@ -42,7 +46,16 @@ if (Meteor.isClient) {
     'click .remove': function(){
        var selectedPlayer = Session.get('selectedPlayer');
       Meteor.call('removePlayerData', selectedPlayer);
+    },
+
+    'click .edit': function(){
+      Session.set('editTable', true);
+      console.log("edit")
     }
+
+    // 'click .update': function() {
+    //   var sEditName = Session.get('key');
+    // }
   });
 
 } 

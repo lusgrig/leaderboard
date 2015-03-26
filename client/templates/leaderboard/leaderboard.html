@@ -1,6 +1,7 @@
 <template name="leaderboard">
     <table class="table table-striped">
         <tbody>
+          {{>InfoModal}}
             <tr>
               <th>Name</th>
               <th>Score</th>
@@ -8,9 +9,15 @@
             </tr>
             {{#each player}}
               <tr class="player {{selectedClass}}">
-                <td>{{name}}</td>
-                <td>{{score}}</td>
-                <td><a href="#" class="glyphicon glyphicon-trash remove"></a></td>
+              {{#if editTable}}
+                <td class="player {{selectedClass}}"><input type="text" name="name" value="{{name}}"><a href="#" class="glyphicon glyphicon-ok update"></a></td>
+                <td class="player {{selectedClass}}">{{score}}</td>
+                <td class="player {{selectedClass}}"><a href="#" class="glyphicon glyphicon-trash remove"></a>&nbsp;&nbsp;&nbsp;<a href="#" class="edit glyphicon glyphicon-pencil"></a></td>
+              {{else}}
+                <td class="player {{selectedClass}}">{{name}}</td>
+                <td class="player {{selectedClass}}">{{score}}</td>
+                <td class="player {{selectedClass}}"><a href="#" class="glyphicon glyphicon-trash remove"></a>&nbsp;&nbsp;&nbsp;<a href="#" class="edit glyphicon glyphicon-pencil"></a></td>
+            {{/if}}
               </tr>
             {{/each}}
         </tbody>

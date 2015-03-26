@@ -1,13 +1,14 @@
 <head>
-  <title>Jeff's Custom Leaderboard</title>
+  <title>Final Phil</title>
 </head>
+<template name="tHome">
+  <body>
+    {{> tNav}}
+    <div class="container">
+    <h1>Testing Leaderboard</h1>
 
-<body>
-  {{> loginButtons}}
-  <div class="container">
-  <h1>Jeff's Playground with "Leaderboard"</h1>
-
-  {{> leaderboard}}
-  {{> addPlayerForm}}
-  </div>
+    {{> leaderboard}}
+    {{> addPlayerForm}}
+    </div>
 </body>
+</template>
